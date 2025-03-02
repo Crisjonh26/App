@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carahayan E - Resource</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      background-image: url('school.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      color: #4c9afe;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 20px;
+    }
+
+    .navbar .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #4c9afe;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .menu .folder {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      color: #333;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .navbar .menu .folder:hover {
+      background: #4c9afe;
+      color: white;
+    }
+
+    /* Hamburger Menu */
+    .navbar .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .navbar .hamburger .line {
+      width: 25px;
+      height: 3px;
+      background: #4c9afe;
+      margin: 4px 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: white;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 4em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 40px;
+    }
+
+    /* Content Sections */
+    .content {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .content h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background:  white;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #4c9afe;
+    }
+
+    .card p {
+      font-size: 1em;
+      color: #666;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #4c9afe;
+      color: white;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .card a:hover {
+      background: #2ed7ff;
+    }
+
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    .footer a {
+      color: #4c9afe;
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+      }
+
+      .navbar .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
+
+      .navbar .menu.active {
+        display: flex;
+      }
+
+      .navbar .hamburger {
+        display: flex;
+      }
+
+      .navbar .hamburger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .navbar .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .navbar .hamburger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div class="logo">Carahayan E - Resource</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="menu">
+      <div class="folder" onclick="toggleContent('content8')">Grade 11</div>
+      <div class="folder" onclick="toggleContent('content9')">Grade 12</div>
+      <div class="folder" onclick="toggleContent('content10')">Literary Folio</div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="S.png" alt="Carahayan School Logo">
+    <h1>Carahayan E - Resource</h1>
+    <p>Your Gateway to Knowledge and Learning</p>
+  </div>
+
+  <!-- Content Sections -->
+  <div id="content8" class="content">
+    <h2>Grade 11 Resources</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>General Mathematics</h3>
+        <p>Explore functions, equations, and applications.</p>
+        <a href="https://drive.google.com/file/d/1BeC3U0znPt2Ex0Ebx4nbPHjRnUlrlGen/view?pli=1">The Function</a>
+        <a href="https://drive.google.com/file/d/1Cp94jryTIwg5aEHcux3lqaDfAhRB6rki/view?usp=embed_facebook">Rational Functions</a>
+        <a href="https://drive.google.com/file/d/1kF36r39Flgtu9JnXN-Cq3Mx8S11dya36/view">Intercepts and Asymptotes</a>
+      </div>
+      <div class="card">
+        <h3>Statistics and Probability</h3>
+        <p>Understand random variables and distributions.</p>
+        <a href="https://www.mediafire.com/file/28plfczv5oxsht7/Statistics+and+Probability+1.pdf/file">Random Variables</a>
+        <a href="https://www.mediafire.com/file/ews034qzevfjt0e/Statistics+and+Probability+2+(1).pdf/file">Mean and Variance</a>
+        <a href="https://www.mediafire.com/file/f6b9dhzitl28jwb/Statistics+and+Probability+3+(1).pdf/file">Normal Distribution</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="content9" class="content">
+    <h2>Grade 12 Resources</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Trends and Networks</h3>
+        <p>Critical thinking in the 21st century.</p>
+        <a href="https://www.mediafire.com/file/hbg1npfezikgfxp/Trends_Q2_Week4_Lesson4.pdf/file">Trends LAS Q2 W4 L4</a>
+      </div>
+      <div class="card">
+        <h3>Media and Information Literacy</h3>
+        <p>Explore media languages and societal issues.</p>
+        <a href="https://www.mediafire.com/file/tgfeu7s6jnte2cf/pdfcoffee.com_module-6-media-and-information-languages-pdf-free.pdf/file">Media and Information Languages</a>
+        <a href="https://www.mediafire.com/file/qtj5ympbfbnzu5l/pdfcoffee.com_core-mil-module-8-jpf-pdf-free.pdf/file">Legal and Ethical Issues</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="content10" class="content">
+    <h2>Literary Folio</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Glimpse School Paper</h3>
+        <p>Read the latest edition of our school paper.</p>
+        <a href="https://online.fliphtml5.com/uuyok/ikfx/?1737594897232">Read Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2023 Carahayan E - Resource. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    <p>RESEARCHERS</p>
+    <h4>Espe<br>Milano<br>Sanorjo<br>San Buenaventura</h4>
+  </div>
+
+  <script>
+    // Toggle Content Visibility
+    function toggleContent(contentId) {
+      var content = document.getElementById(contentId);
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+
+    // Toggle Hamburger Menu
+    function toggleMenu() {
+      const menu = document.querySelector('.navbar .menu');
+      const hamburger = document.querySelector('.navbar .hamburger');
+      menu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
